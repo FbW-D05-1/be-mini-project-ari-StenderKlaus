@@ -1,6 +1,6 @@
 import Axios from 'axios'
 import React, { Component } from 'react'
-import ShowPost from './ShowPost/ShowPost'
+import ShowPost from '../../ShowPost/ShowPost'
 import img1 from '../../assets/asset-1.png'
 import ShowUser from '../Users/ShowUsers/ShowUser'
 import Spinner from '../../Containers/Spinner/Spinner'

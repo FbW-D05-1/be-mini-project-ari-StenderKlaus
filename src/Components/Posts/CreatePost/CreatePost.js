@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import React, { Component } from 'react'
-import ImageUpload from '../../Containers/ImageUpload/ImageUpload'
-import Spinner from '../../Containers/Spinner/Spinner';
+import ImageUpload from '../../../Containers/ImageUpload/ImageUpload'
+import Spinner from '../../../Containers/Spinner/Spinner';
 export class CreatePost extends Component {
     constructor(props) {
         super(props)

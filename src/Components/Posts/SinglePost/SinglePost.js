@@ -4,8 +4,8 @@ import './SinglePost.css'
 import avtar from '../../../assets/avtar.jpg'
 import { Link } from 'react-router-dom'
 import moment from "moment";
-import Spinner from '../../Containers/Spinner/Spinner'
-import Modal from '../../Containers/Modal/Modal'
+import Spinner from '../../../Containers/Spinner/Spinner'
+import Modal from '../../../Containers/Modal/Modal'
 
 export class SinglePost extends Component {
     constructor(props) {
