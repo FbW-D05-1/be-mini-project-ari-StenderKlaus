@@ -1,0 +1,41 @@
+<%- include('components/header'); %>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <%= article.title %>
+                        </h2>
+                        <p class="card-subtitle mb-2 text-muted"><small>Geschrieben von <%= article.author %> am <%=
+                                        article.date.toLocaleDateString() %></small></p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <%= article.content %>
+                        </p>
+                        <% if (article.tags && article.tags.length> 0) { %>
+                            <div class="mt-3">
+                                <span>Tags: </span>
+                                <% article.tags.forEach(function(tag) { %>
+                                    <p class="card-text"><small class="text-muted">
+                                        <%= tag %>
+                                    </p>
+                                    <% }); %>
+                            </div>
+                            <% } %>
+                            <a href="/" class="btn btn-primary mt-3">Back to Home</a>
+                            <a href="/articles/<%= article._id %>/edit" class="btn btn-primary mt-3">Bearbeiten</a>
+                            <form action="/articles/<%= article._id %>?_method=DELETE/edit/delete" method="DELETE" class="d-inline">
+                                <button type="submit" class="btn btn-danger mt-3">Löschen</button>
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <%- include('components/footer'); %>
+    </body>
+</html>

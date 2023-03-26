@@ -1,28 +1,27 @@
 <%- include('components/header'); %>
-  <main class="container my-4">
+  <div class="container">
     <% if (articles && articles.length) { %>
       <% articles.forEach(function(post) { %>
-        <article class="mb-4">
-          <h2 class="mb-2">
-            <%= post.title %>
-          </h2>
-          <p class="mb-2">
-            <%= post.content %>
-          </p>
-          <div class="d-flex justify-content-between align-items-center">
-            <small class="text-muted">Geschrieben von <%= post.author %> am <%= post.date.toLocaleDateString() %>
-                  </small>
-            <span class="badge badge-secondary">
-              <%= post.tags %>
-            </span>
-            <button type="submit" class="btn btn-primary" >X</button>
+        <div class="card mt-5">
+          <div class="card-body text-center">
+            <h5 class="card-title">
+              <%= post.title %>
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">Geschrieben von <%= post.author %> am <%=
+                  post.date.toLocaleDateString() %>
+            </h6>
+            <p class="card-text">
+              <%= post.content %>
+            </p>
+            <p class="card-text"><small class="text-muted">Tags: <%= post.tags %></small></p>
+            <a href="/articles/<%= post._id %>" class="card-link btn btn-primary mt-3">Lesen</a>
           </div>
-        </article>
+        </div>
         <% }); %>
-          <% } else { %>
-            <p>Es wurden noch keine Blog-Beiträge veröffentlicht.</p>
-            <% } %>
-  </main>
+        <% } else { %>
+        <p>Es wurden noch keine Artikel veröffentlicht.</p>
+        <% } %>
+      </div>
   <%- include('components/footer'); %>
 </body>
 
