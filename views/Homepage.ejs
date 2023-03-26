@@ -1,0 +1,29 @@
+<%- include('components/header'); %>
+  <main class="container my-4">
+    <% if (articles && articles.length) { %>
+      <% articles.forEach(function(post) { %>
+        <article class="mb-4">
+          <h2 class="mb-2">
+            <%= post.title %>
+          </h2>
+          <p class="mb-2">
+            <%= post.content %>
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <small class="text-muted">Geschrieben von <%= post.author %> am <%= post.date.toLocaleDateString() %>
+                  </small>
+            <span class="badge badge-secondary">
+              <%= post.tags %>
+            </span>
+            <button type="submit" class="btn btn-primary" >X</button>
+          </div>
+        </article>
+        <% }); %>
+          <% } else { %>
+            <p>Es wurden noch keine Blog-Beiträge veröffentlicht.</p>
+            <% } %>
+  </main>
+  <%- include('components/footer'); %>
+</body>
+
+</html>
